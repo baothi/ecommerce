@@ -28,8 +28,8 @@ class ProductListView(ListView):
     # qs = Product.objects.filter(description__contains='2')
 
     # def get_context_data(self, *args, **kwargs):
-    # 	# https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
-    # 	# https://www.howkteam.vn/course/lap-trinh-python-co-ban/kieu-du-lieu-function-trong-python--packing-va-unpacking-arguments-2655
+    #   # https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
+    #   # https://www.howkteam.vn/course/lap-trinh-python-co-ban/kieu-du-lieu-function-trong-python--packing-va-unpacking-arguments-2655
     #     context = super(ProductListView, self).get_context_data(*args, **kwargs)
     #     print(context)
     #     return context
@@ -70,8 +70,8 @@ class ProductDetailView(DetailView):
     template_name = "products/detail.html"
 
     def get_context_data(self, *args, **kwargs):
-    	# https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
-    	# https://www.howkteam.vn/course/lap-trinh-python-co-ban/kieu-du-lieu-function-trong-python--packing-va-unpacking-arguments-2655
+        # https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
+        # https://www.howkteam.vn/course/lap-trinh-python-co-ban/kieu-du-lieu-function-trong-python--packing-va-unpacking-arguments-2655
         context = super(ProductDetailView, self).get_context_data(*args, **kwargs)
         print(context)
         return context
