@@ -21,7 +21,7 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 from . import views
-app_name = 'products'
+app_name = 'products','search'
 # from products.views import (
 #         ProductListView, 
 #         product_list_view, 
@@ -42,6 +42,7 @@ urlpatterns = [
     path('register/', register_page, name='register'),
     path('bootstrap/', TemplateView.as_view(template_name='bootstrap/examples.html')),
     path('products/', include(("products.urls","products"), namespace='products')),
+    path('search/', include(("search.urls","search"), namespace='search')),
     # path('featured/', ProductFeaturedListView.as_view()),
     # path('featured/<int:pk>', ProductFeaturedDetailView.as_view()),
     # path('products/', ProductListView.as_view()),
