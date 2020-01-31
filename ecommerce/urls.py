@@ -33,7 +33,7 @@ app_name = 'products','search','carts',
 #         ProductFeaturedDetailView
 #         )
 
-from accounts.views import login_page, register_page
+from accounts.views import login_page, register_page, guest_register_view
 from .views import home_page, about_page, contact_page
 
 urlpatterns = [
@@ -41,6 +41,7 @@ urlpatterns = [
     path('about/', about_page, name='about'),
     path('contact/', contact_page, name='contact'),
     path('login/', login_page, name='login'),
+    path('register/guest/', guest_register_view, name='guest_register'),
     path('logout/', LogoutView.as_view(), name='logout'),
     # path('cart/', cart_home, name='cart'),
     path('cart/', include(("carts.urls","carts"), namespace='carts')),
