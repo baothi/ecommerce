@@ -23,16 +23,7 @@ from django.views.generic import TemplateView
 
 from . import views
 app_name = 'products','search','carts',
-# from products.views import (
-#         ProductListView, 
-#         product_list_view, 
-#         ProductDetailView, 
-#         ProductDeatailSlugView,
-#         product_detail_view,
-#         ProductFeaturedListView,
-#         ProductFeaturedDetailView
-#         )
-
+from addresses.views import checkout_address_create_view
 from accounts.views import login_page, register_page, guest_register_view
 from .views import home_page, about_page, contact_page
 
@@ -43,7 +34,7 @@ urlpatterns = [
     path('login/', login_page, name='login'),
     path('register/guest/', guest_register_view, name='guest_register'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    # path('cart/', cart_home, name='cart'),
+    path('checkout/address/create/', checkout_address_create_view, name='checkout_address_create_view'),
     path('cart/', include(("carts.urls","carts"), namespace='carts')),
     path('register/', register_page, name='register'),
     path('bootstrap/', TemplateView.as_view(template_name='bootstrap/examples.html')),
