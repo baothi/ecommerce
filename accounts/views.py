@@ -43,13 +43,17 @@ def login_page(request):
         password = form.cleaned_data.get("password")
         user = authenticate(request, username=username, password=password)
         if user is not None:
-          login(request, user)
-          if is_safe_url(redirect_path, request.get_host()):
-            return redirect(redirect_path)
-          else:
-            return redirect("/")
+            login(request, user)
+            try:
+                del request.session['guest_email_id']
+            except:
+                pass
+            if is_safe_url(redirect_path, request.get_host()):
+                return redirect(redirect_path)
+            else:
+                return redirect("/")
         else:
-          print("Error")
+            print("Error")
     return render(request, "accounts/login.html", context)
 
 User = get_user_model()
